@@ -2,7 +2,7 @@
  * P P P P P P P P P P P P P P P P P P P P P P
  * @author github/skymunn (Ikramullah)
  * @description PINGING YOUR FRIEND
- * @version v2.0P
+ * @version v3.0P
  * @description node ping.js
  */
 function spamPing(loopNumber) {
@@ -15,23 +15,24 @@ function spamPing(loopNumber) {
         /**
          * LigaDev 2018 ECMA Timestamp Modified
          */
-        function setTimeStamp() {
+        function setTimeStamp(a) {
             let
                 c  = new Date(),
-                h  = c.getHours().toString().padStart(2, 0);
-                mm = c.getMinutes().toString().padStart(2, 0);
-                s  = c.getSeconds().toString().padStart(2, 0);
+                h  = c.getHours().toString().padStart(2, 0),
+                mm = c.getMinutes().toString().padStart(2, 0),
+                _s  = c.getSeconds().toString().padStart(2, 0),
+                s   = parseInt(_s) + a 
             ;
-            return `${h}:${mm}:${s}`;
+            return `${h}:${mm}:${s.toString().padStart(2, 0)}`;
         }
 
         setTimeout(function() {
             for (let i=1 ; i <= number ; i++){
-                console.log(`\nP [Send at ${setTimeStamp()}]`);
+                console.log(`\nP [Send at ${setTimeStamp(i)}]`);
             }
             let time = (number < 2) ? "time" : "times";
             console.log(`\nOkay, that's enough. You're pinging about ${number} ${time}.`);
-        },2000);
+        },1000);
     }
 }
 
