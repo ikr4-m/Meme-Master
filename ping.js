@@ -20,10 +20,9 @@ function spamPing(loopNumber) {
                 c  = new Date(),
                 h  = c.getHours().toString().padStart(2, 0),
                 mm = c.getMinutes().toString().padStart(2, 0),
-                _s  = c.getSeconds().toString().padStart(2, 0),
-                s   = parseInt(_s) + a 
+                s  = c.getSeconds().toString().padStart(2, 0)
             ;
-            return `${h}:${mm}:${s.toString().padStart(2, 0)}`;
+            return `${h}:${mm}:${s}`;
         }
 
         setTimeout(function() {
